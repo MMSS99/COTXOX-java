@@ -1,5 +1,8 @@
 package edu.estatuas.cotxox.carrera;
 
+import edu.estatuas.cotxox.conductores.Conductor;
+import edu.estatuas.cotxox.conductores.PoolConductores;
+
 public class Carrera {
 
     private String tarjetaCredito;
@@ -11,6 +14,7 @@ public class Carrera {
     private int costeEsperado;
     private double costeTotal;
     private int propina;
+    private Conductor conductor;
 
     //setters
     public Carrera(String tarjetacredito){
@@ -31,6 +35,10 @@ public class Carrera {
 
     public void setTiempoEsperado(int tiempoEsperado){
         this.tiempoEsperado = tiempoEsperado;
+    }
+
+    public void asignarConductor(PoolConductores conductores){
+        this.conductor = conductores.asignarConductor();
     }
 
     //getters
