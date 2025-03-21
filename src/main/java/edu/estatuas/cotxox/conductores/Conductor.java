@@ -29,4 +29,13 @@ public class Conductor {
     public void setValoracion(double valoracionMedia) {
         this.valoracionMedia = valoracionMedia;
     }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
+    //getter
+    public boolean isOcupado(){
+        return this.ocupado;
+    }
 }
