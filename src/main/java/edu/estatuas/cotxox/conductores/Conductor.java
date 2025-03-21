@@ -38,4 +38,12 @@ public class Conductor {
     public boolean isOcupado(){
         return this.ocupado;
     }
+
+    public String getNombre() {return this.nombre;}
+
+    public String getModelo() {return this.modelo;}
+
+    public String getMatricula() {return this.matricula;}
+
+    public double getValoracion() {return this.valoracionMedia;}
 }
