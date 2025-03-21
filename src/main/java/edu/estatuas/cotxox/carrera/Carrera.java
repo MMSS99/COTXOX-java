@@ -62,5 +62,9 @@ public class Carrera {
         return this.costeEsperado;
     }
 
+    public Conductor getConductor(){
+        return this.conductor;
+    }
+
 }
 
