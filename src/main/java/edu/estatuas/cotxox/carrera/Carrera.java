@@ -41,6 +41,8 @@ public class Carrera {
         this.conductor = conductores.asignarConductor();
     }
 
+    public void recibirPropina(int propina){this.propina = propina;}
+
 
     //getters
     public String getTarjetaCredito(){
@@ -69,6 +71,8 @@ public class Carrera {
     }
 
     public int getTiempoEsperado(){ return this.tiempoEsperado; }
+
+    public int getPropina(){ return this.propina; }
 
     //methods
 
