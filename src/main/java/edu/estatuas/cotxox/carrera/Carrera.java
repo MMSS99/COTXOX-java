@@ -65,6 +65,10 @@ public class Carrera {
         if(this.costeTotal == 0.0d){this.calcularCosteEsperado();}
         return this.costeTotal;
     }
+    //terriblemente redundante
+    public double getCosteTotal(){
+        return this.costeTotal;
+    }
 
     public Conductor getConductor(){
         return this.conductor;
