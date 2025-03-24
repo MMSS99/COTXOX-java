@@ -2,6 +2,7 @@ package edu.estatuas.cotxox.carrera;
 
 import edu.estatuas.cotxox.conductores.Conductor;
 import edu.estatuas.cotxox.conductores.PoolConductores;
+import edu.estatuas.cotxox.tarifa.Tarifa;
 
 public class Carrera {
 
@@ -11,7 +12,6 @@ public class Carrera {
     private double distancia;
     private int tiempoEsperado;
     private int tiempoCarrera;
-    private int costeEsperado;
     private double costeTotal;
     private int propina;
     private Conductor conductor;
@@ -59,8 +59,9 @@ public class Carrera {
         return this.distancia;
     }
 
-    public int getCosteEsperado(){
-        return this.costeEsperado;
+    public double getCosteEsperado(){
+        if(this.costeTotal == 0.0d){this.calcularCosteEsperado();}
+        return this.costeTotal;
     }
 
     public Conductor getConductor(){
@@ -68,6 +69,12 @@ public class Carrera {
     }
 
     public int getTiempoEsperado(){ return this.tiempoEsperado; }
+
+    //
+
+    public void calcularCosteEsperado(){
+        this.costeTotal = Tarifa.getCosteTotalEsperado(this);
+    }
 
 }
 
