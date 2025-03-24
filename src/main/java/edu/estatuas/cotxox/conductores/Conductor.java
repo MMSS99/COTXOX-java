@@ -9,7 +9,7 @@ public class Conductor {
     private String matricula;
     private double valoracionMedia;
     private boolean ocupado;
-    private ArrayList<Byte> valoraciones;
+    private ArrayList<Byte> valoraciones = new ArrayList<>();
 
     public Conductor(){}
 
@@ -45,5 +45,12 @@ public class Conductor {
 
     public String getMatricula() {return this.matricula;}
 
-    public double getValoracion() {return this.valoracionMedia;}
+    public double getValoracion() {
+        if(valoracionMedia == 0 && !valoraciones.isEmpty()){calcularValoracionMedia();} else if (valoraciones.isEmpty()){return 0.0d;}
+        return this.valoracionMedia;}
+
+    //methods
+    private void calcularValoracionMedia(){
+        this.valoracionMedia = valoraciones.stream().mapToInt(num -> num.intValue()).sum()/Double.valueOf(valoraciones.size());
+    }
 }
