@@ -70,10 +70,17 @@ public class Carrera {
 
     public int getTiempoEsperado(){ return this.tiempoEsperado; }
 
-    //
+    //methods
 
     public void calcularCosteEsperado(){
         this.costeTotal = Tarifa.getCosteTotalEsperado(this);
+    }
+
+    public void realizarPago(double pago){
+        if(pago > getCosteEsperado())
+            {System.out.println("Pago realizado con éxito");}
+        else
+            {System.out.println("Pago insuficiente; ¡Alerta de moroso!");}
     }
 
 }
