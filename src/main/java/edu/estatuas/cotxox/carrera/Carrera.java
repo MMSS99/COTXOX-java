@@ -16,11 +16,11 @@ public class Carrera {
     private int propina;
     private Conductor conductor;
 
-    //setters
     public Carrera(String tarjetacredito){
         this.tarjetaCredito = tarjetacredito;
     }
 
+    //setters
     public void setOrigen(String origen){
         this.origen = origen;
     }
