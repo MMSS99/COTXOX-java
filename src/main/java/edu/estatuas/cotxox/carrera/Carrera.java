@@ -85,7 +85,7 @@ public class Carrera {
     }
 
     public void realizarPago(double pago){
-        if(pago > getCosteEsperado())
+        if(pago >= getCosteEsperado())
             {System.out.println("Pago realizado con éxito");}
         else
             {System.out.println("Pago insuficiente; ¡Alerta de moroso!");}
