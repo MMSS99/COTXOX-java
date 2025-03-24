@@ -41,6 +41,7 @@ public class Carrera {
         this.conductor = conductores.asignarConductor();
     }
 
+
     //getters
     public String getTarjetaCredito(){
         return this.tarjetaCredito;
@@ -65,6 +66,8 @@ public class Carrera {
     public Conductor getConductor(){
         return this.conductor;
     }
+
+    public int getTiempoEsperado(){ return this.tiempoEsperado; }
 
 }
 
