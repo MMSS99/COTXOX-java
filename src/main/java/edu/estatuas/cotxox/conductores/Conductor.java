@@ -53,4 +53,9 @@ public class Conductor {
     private void calcularValoracionMedia(){
         this.valoracionMedia = valoraciones.stream().mapToInt(num -> num.intValue()).sum()/Double.valueOf(valoraciones.size());
     }
+
+    @Override
+    public String toString() {
+        return getNombre() + "(" + getModelo() + ", " + getMatricula() + ")";
+    }
 }
