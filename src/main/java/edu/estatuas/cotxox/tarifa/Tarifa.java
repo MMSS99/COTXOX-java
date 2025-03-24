@@ -17,7 +17,10 @@ public class Tarifa {
     }
 
     public static double getCosteTotalEsperado(Carrera carrera){
-        double totalComputado =
+        double totalComputado = getCosteDistancia(carrera.getDistancia()) + getCosteTiempo(carrera.getTiempoEsperado());
+
+        return Math.max(totalComputado, COSTE_MINIMO);
+        // return yourCondition ? "ifTrue" : "ifFalse";
     }
 }
 
