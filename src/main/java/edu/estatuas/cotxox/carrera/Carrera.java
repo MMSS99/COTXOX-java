@@ -87,5 +87,11 @@ public class Carrera {
             {System.out.println("Pago insuficiente; ¡Alerta de moroso!");}
     }
 
+    public void liberarConductor(){
+        getConductor().setOcupado(false);
+        this.conductor = null;
+
+    }
+
 }
 
