@@ -2,6 +2,7 @@ package edu.estatuas.cotxox.carrera;
 
 import edu.estatuas.cotxox.conductores.Conductor;
 import edu.estatuas.cotxox.conductores.PoolConductores;
+import edu.estatuas.cotxox.tarifa.Tarifa;
 
 public class Carrera {
 
@@ -11,16 +12,15 @@ public class Carrera {
     private double distancia;
     private int tiempoEsperado;
     private int tiempoCarrera;
-    private int costeEsperado;
     private double costeTotal;
     private int propina;
     private Conductor conductor;
 
-    //setters
     public Carrera(String tarjetacredito){
         this.tarjetaCredito = tarjetacredito;
     }
 
+    //setters
     public void setOrigen(String origen){
         this.origen = origen;
     }
@@ -41,6 +41,9 @@ public class Carrera {
         this.conductor = conductores.asignarConductor();
     }
 
+    public void recibirPropina(int propina){this.propina = propina;}
+
+
     //getters
     public String getTarjetaCredito(){
         return this.tarjetaCredito;
@@ -58,8 +61,40 @@ public class Carrera {
         return this.distancia;
     }
 
-    public int getCosteEsperado(){
-        return this.costeEsperado;
+    public double getCosteEsperado(){
+        if(this.costeTotal == 0.0d){this.calcularCosteEsperado();}
+        return this.costeTotal;
+    }
+    //terriblemente redundante
+    public double getCosteTotal(){
+        return this.costeTotal;
+    }
+
+    public Conductor getConductor(){
+        return this.conductor;
+    }
+
+    public int getTiempoEsperado(){ return this.tiempoEsperado; }
+
+    public int getPropina(){ return this.propina; }
+
+    //methods
+
+    public void calcularCosteEsperado(){
+        this.costeTotal = Tarifa.getCosteTotalEsperado(this);
+    }
+
+    public void realizarPago(double pago){
+        if(pago >= getCosteEsperado())
+            {System.out.println("Pago realizado con éxito");}
+        else
+            {System.out.println("Pago insuficiente; ¡Alerta de moroso!");}
+    }
+
+    public void liberarConductor(){
+        getConductor().setOcupado(false);
+        this.conductor = null;
+
     }
 
 }
