@@ -93,7 +93,6 @@ public class Carrera {
 
     public void liberarConductor(){
         getConductor().setOcupado(false);
-        this.conductor = null;
 
     }
 
