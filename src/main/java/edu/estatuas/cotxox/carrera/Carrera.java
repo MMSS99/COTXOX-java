@@ -11,7 +11,6 @@ public class Carrera {
     private String destino;
     private double distancia;
     private int tiempoEsperado;
-    private int tiempoCarrera;
     private double costeTotal;
     private int propina;
     private Conductor conductor;
