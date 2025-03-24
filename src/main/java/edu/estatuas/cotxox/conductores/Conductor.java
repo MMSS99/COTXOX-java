@@ -26,8 +26,8 @@ public class Conductor {
         this.modelo = modelo;
     }
 
-    public void setValoracion(double valoracionMedia) {
-        this.valoracionMedia = valoracionMedia;
+    public void setValoracion(byte valoracion) {
+        this.valoraciones.add(valoracion);
     }
 
     public void setOcupado(boolean ocupado) {
